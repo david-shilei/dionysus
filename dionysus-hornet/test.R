@@ -1,0 +1,5 @@
+library(RMySQL)
+con <- dbConnect(MySQL(), host='localhost', dbname='dionysus', user='root', password='welcome1')
+grapes <- dbGetQuery(con, statement='select * from grapes')
+print(grapes["name"])
+dbDisconnect(con)
